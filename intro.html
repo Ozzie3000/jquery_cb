@@ -7,7 +7,7 @@
 <!--  if necessary
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 -->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
 
 </script>
 </head>
@@ -15,7 +15,15 @@
 	<h3></h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-	<div>Some content that will get modified by jquery!</div>
+	<div id="div1">Some content that will get modified by jquery!</div>
+
+
+	<script type="text/javascript">
+		$("div").hide();
+		$("div").text("new comment!");
+		$("div").addClass("updatedContent");
+		$("div").show();
+	</script>
 
 </body>
 </html>
