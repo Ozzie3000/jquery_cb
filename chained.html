@@ -15,7 +15,9 @@
 	<h3></h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-	<div id="div1">Some content that will get modified by jquery!</div>
+	<div id="div1">Some content that will get modified by jquery! 1</div>
+	<div id="div2">Some content that will get modified by jquery! 2</div>
+	<div id="div3">Some content that will get modified by jquery! 3</div>	
 
 
 	<script type="text/javascript">
@@ -27,7 +29,14 @@
 		*/
 
 		//shorter version
-		$("div").hide().text("new comment w/ jquery").addClass("updatedContent").show();
+		//$("div").hide().text("new comment w/ jquery").addClass("updatedContent").show();
+
+		//a different short version
+		$("div")
+			.hide()
+			.text("new comment w/ jquery")
+			.addClass("updatedContent")
+			.show();
 
 	</script>
 
