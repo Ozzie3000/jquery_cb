@@ -36,12 +36,15 @@
 	<input name="" type="button" />
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
 	$(function(){
-		
+	//search within all for elements, using a wrapper for context, alerts "8 inputs"
+	alert('You have ' + jQuery("input",$("form")).length + " inputs types \ninside form tags in this document.");
 
-
+	//search within the first form element using DOM reference as the context. Alerts "4 inputs"
+	alert("You have " + jQuery("input",document.forms[0]).length + " inputs types \ninside the first form tag in this document.")
 
 	});
-
+</script>
 </body>
 </html>
