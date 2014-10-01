@@ -30,11 +30,14 @@
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
+		//show user the num of elements ; we are looking for anchors
+		bgx = $('body').css('backgroundColor');
 
-
-
+		alert('This Page contains ' + $(document.getElementsByTagName('a')).length + ' <a> elements, and has a ' + bgx + ' background color. Now google rgb and use those numbers you lazy bum.');
 	});
+	//alert('This Page contains ' + $(document.getElementsByTagName('a')).length + ' <a> elements, and has a ' + $(//document.body).attr('background') + ' background color.');
+
+	
 </script>
 </body>
 </html>
