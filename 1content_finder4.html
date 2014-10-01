@@ -42,7 +42,9 @@
 	alert('You have ' + jQuery("input",$("form")).length + " inputs types \ninside form tags in this document.");
 
 	//search within the first form element using DOM reference as the context. Alerts "4 inputs"
-	alert("You have " + jQuery("input",document.forms[0]).length + " inputs types \ninside the first form tag in this document.")
+	alert("You have " + jQuery("input",document.forms[0]).length + " inputs types \ninside the first form tag in this document.");
+	//search within the body element for all input elements using an expression. Alerts "total inputs"
+	alert("You have " + jQuery("input","body").length + " inputs types \nin this document." );
 
 	});
 </script>
