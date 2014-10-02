@@ -17,15 +17,22 @@
 	<br /><br />
 
 	<a href="#" class="external">link</a>
+	<a href="#"></a>
+	<a href="#" class="external">link</a>
+	<a href="#" class="external">link</a>
+	<a href="#"></a>
+	<a href="#" class="external">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
-
-
+		//give us all anchors with external class
+		alert(jQuery('a').filter('.external').length + ' external links (a tags with class external).');
 	});
 </script>
 </body>
