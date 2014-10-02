@@ -28,7 +28,10 @@
 	$(function(){
 		//alert total italized words found inside p tats
 		alert("The paragraphs contain "+ jQuery("p").find("em").length + " <em> tags");
-
+		//another way
+		alert("A similar function: "+ jQuery("em",$("p")).length);
+		//yet more ways
+		alert("3rd option: "+ jQuery("p em").length);
 	});
 </script>
 </body>
