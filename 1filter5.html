@@ -27,12 +27,16 @@
 	<a href="#">link</a>
 	<a href="#">link</a>
 
+	<br /><br />
+	<input type="button" value="show how many a tags" onclick="alert(all_a);" />
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
 		//give us all anchors with external class
 		alert(jQuery('a').filter('.external').length + ' external links (a tags with class external).');
+
+		alert($("a").filter(".external").end().length +" with end method we get all a's");
 	});
 </script>
 </body>
