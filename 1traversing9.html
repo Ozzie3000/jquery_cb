@@ -16,16 +16,29 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-
+	<div>
+			<ul>
+				<li><a href="#">link</a></li>
+				<li><a href="#">link</a></li>
+				<li><a href="#">link</a></li>
+				<li><a href="#">link</a></li>
+				<li><a href="#">link</a></li>
+			</ul>
+	</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
+		//select 3rd li
+		jQuery("li:eq(2)").next(); // goes to 4th li
+		jQuery("li:eq(2)").prev(); // goes to 2nd li
+		jQuery("li:eq(2)").parent(); //selects container...this case ul
+		jQuery("li:eq(2)").parent().children(); //selects the parent, then drops down to all children
+		jQuery("li:eq(2)").nextAll(); //selects all li after current
+		jQuery("li:eq(2)").prevAll(); //selects all li prior to current position
 
-
-
+		// all these methods produce new wrapper sets.  Use end() to go back a step
 	});
 </script>
 </body>
