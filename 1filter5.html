@@ -37,6 +37,11 @@
 		alert(jQuery('a').filter('.external').length + ' external links (a tags with class external).');
 
 		alert($("a").filter(".external").end().length +" with end method we get all a's");
+
+		alert(jQuery("a")
+				.filter(function(index){return $(this).hasClass("external");})
+				.length + " external links"
+			);
 	});
 </script>
 </body>
