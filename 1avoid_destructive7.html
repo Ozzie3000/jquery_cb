@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jquery | 1.7 Return to prior</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<!--  if necessary
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+-->
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<h3>Return to prior wrapper set before a destructive change</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<p>Text goes here buddy.</p>
+	<p class="middle">Middle <span>Earth</span></p>
+	<p>Last Text</p>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+	$(function(){
+		alert(jquery("p").filter("middle").length); //here 1
+		alert(jquery("p").filter("middle").end().length); //shows 3
+		alert(jquery("p").filter("middle").find("span").end().end().length); //3
+
+
+	});
+</script>
+</body>
+</html>
