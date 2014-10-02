@@ -22,11 +22,12 @@
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		alert(jquery("p").filter("middle").length); //here 1
-		alert(jquery("p").filter("middle").end().length); //shows 3
-		alert(jquery("p").filter("middle").find("span").end().end().length); //3
-
-
+		alert(jQuery("p").filter(".middle").length); //here 1
+		alert(jQuery("p").filter(".middle").end().length); //shows 3
+		alert(jQuery("p").filter(".middle").find("span").end().end().length); //3
+		/* destructive
+		ad(), andSelf(), children(), closes(), filter(), find(), map(), next(), nextAll(), not(), parent(), parents(), prev(), prevAll(), siblings(), slice(), clone(), appdendTo(), prependTo(), insertBefore(), insertAfter(), and replaceAll()
+		*/
 	});
 </script>
 </body>
