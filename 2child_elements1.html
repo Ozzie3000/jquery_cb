@@ -23,6 +23,8 @@
 		Lets use the <em>direct descendant combinator <span> > </span></em> for help
 	</p>
 
+	<p>var cddc = jQuery('#nav li > a');</p>
+
 	<a href="/somewhere" title="don't click me">STufF</a>
 	<ul id="nav">
 		<li><a href="#atag1">Anchor here 1</a></li>
@@ -31,14 +33,15 @@
 		<li><spa><a href="#atag4">Anchor here 4</a></span></li>
 	</ul>
 
+	<input type="button" onclick="alert(cddc.length)" value="length of cddc" >
+
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
-
 
 	});
+	var cddc = jQuery('#nav li > a');
+	//how many?  typ
 </script>
 </body>
 </html>
