@@ -23,14 +23,15 @@
 		<li>Stuff </li>
 	</ol>
 
+	<p> A p tag here and there</p>
+
+
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
-
-
+		jQuery('ol').clone().appendTo('body');
+		//jQuery('ol').clone().appendTo('p'); // puts it inside the p tag
 	});
 </script>
 </body>
