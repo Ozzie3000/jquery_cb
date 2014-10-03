@@ -12,7 +12,7 @@
 </script>
 </head>
 <body>
-	<h3>Working on the fly: Creating, operating, insterting DOM elements</h3>
+	<h3>1.10 Working on the fly: Creating, operating, insterting DOM elements</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
@@ -22,8 +22,8 @@
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
+		//jQuery("<p><a>stuffffffff</a></p>");
+		jQuery('<p><a>stuffffffff</a></p>').find('a').attr('href','http://www.amazon.com').end().appedTo('body');
 
 
 	});
