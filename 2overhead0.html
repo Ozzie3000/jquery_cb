@@ -16,9 +16,15 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-	<p>jQuery('#content p a');</p>
-	<p>Will return all anchors insde p tags inside #content</p>
+	<p>jQuery('#ids p a');</p>
+	<p>Will return all anchors insde p tags inside #ids</p>
 
+	<p>jQuery('#ids p a').addClass('stuff');</p>
+	<p>add class to your previously selected stuff</p>
+
+	<p>jQuery('body div#something div#somethingElse');</p>
+	<p>is slower and the same as</p>
+	<p>jQuery('#somethingElse');</p>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
