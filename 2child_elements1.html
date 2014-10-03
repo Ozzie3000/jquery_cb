@@ -8,16 +8,28 @@
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 -->
 <script type="text/javascript">
-
 </script>
+<style type="text/css">
+	em{font-size: 18px; color: blue;}
+	span{color: red; font-weight: 900}
+</style>
 </head>
 <body>
 	<h3>2.1 Find the children only</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
+	<p>
+		Lets use the <em>direct descendant combinator <span> > </span></em> for help
+	</p>
 
-
+	<a href="/somewhere" title="don't click me">STufF</a>
+	<ul id="nav">
+		<li><a href="#atag1">Anchor here 1</a></li>
+		<li><a href="#atag2">Anchor here 2</a></li>
+		<li><a href="#atag3">Anchor here 3</a></li>
+		<li><spa><a href="#atag4">Anchor here 4</a></span></li>
+	</ul>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
