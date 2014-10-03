@@ -18,7 +18,7 @@
 
 	<a>Empty a tag before jQuery 1</a>
 	<br />
-	<a>Empty a tag before jQuery 2</a>
+	<a id="banana">Empty a tag before jQuery 2</a>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
@@ -28,6 +28,7 @@
 		alert(
 			jQuery('a').attr('href','https://www.amazon.com').attr('href')
 		);
+		jQuery('a#banana').attr({'href':'https://www.amazon.com','title':'Amazon!'}).attr('href');
 	});
 </script>
 </body>
