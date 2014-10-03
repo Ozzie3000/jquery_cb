@@ -17,7 +17,7 @@
 	<br /><br />
 	<ul>
 		<li class="gone">Li element here 1</li>
-		<li>Li element here 2</li>
+		<li class="empty">Li element here 2</li>
 		<li class="gone">Li element here 3</li>
 		<li class="gone">Li element here 4</li>
 		<li>Li element here 5</li>
@@ -28,10 +28,11 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
-	$(function(){
+	//$(function(){
 		jQuery('li.gone').replaceWith('<li>swapped. new li</li>');
-
-	});
+		var yoyo1 = jQuery('li').length;
+		var yoyo2 = $('li.empty').length;
+	//});
 </script>
 </body>
 </html>
