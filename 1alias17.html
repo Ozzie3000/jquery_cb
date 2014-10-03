@@ -21,12 +21,17 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
+	(function($){ 
+		//function to create private scope with $ parameter
+		//private scope and using $ without worry of conflict
+	})(jQuery);
+
 	$(function(){
-		
-
-
+	
 
 	});
+	/* jQuery is part of Global namespace. You can use $ is alias without fear of global conflicts...but...you have to create an anonymous function that is self-invoking.We pass the jQuery object to and then use the $ character as a parameter pointer to the jQuery object
+	*/
 </script>
 </body>
 </html>
