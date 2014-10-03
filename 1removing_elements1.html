@@ -15,19 +15,23 @@
 	<h3>1.11 Remove the DOM stuff </h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
+	<p>4 anchor tags below when page loads.  Jquery knocks them out.</p>
+	<a href="#">Anchor Element here</a>
+	<a href="#">Anchor Element here</a>
+	<a href="#" class="st">Anchor Element here</a>
+	<a href="#">Anchor Element here</a>
+	<a href="#" class="st">Anchor Element here</a>
 
-	<a href="#">Anchor Element here</a>
-	<a href="#">Anchor Element here</a>
-	<a href="#">Anchor Element here</a>
-	<a href="#">Anchor Element here</a>
+	<p>A p tag </p>
+	<p class="hidden">A p tag with class hidden</p>
+	<p class="other">A p tag with class other</p>
+
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
-
-
+		jQuery("a").remove();
+		jQuery('p').remove('.hidden');  //optional argument to be more selective
 	});
 </script>
 </body>
