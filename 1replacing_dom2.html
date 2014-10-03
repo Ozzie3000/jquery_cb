@@ -16,22 +16,20 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 	<ul>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
-		<li>Li element here</li>
+		<li class="gone">Li element here 1</li>
+		<li>Li element here 2</li>
+		<li class="gone">Li element here 3</li>
+		<li class="gone">Li element here 4</li>
+		<li>Li element here 5</li>
+		<li class="gone">Li element here 6</li>
+		<li>Li element here 7</li>
+		<li class="gone">Li element here 8</li>
 	</ul>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
-
+		jQuery('li.gone').replaceWith('<li>swapped. new li</li>');
 
 	});
 </script>
