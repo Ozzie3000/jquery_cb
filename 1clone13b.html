@@ -16,7 +16,7 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-	<ol>
+	<ol id="apple">
 		<li>Stuff </li>
 		<li>Stuff </li>
 		<li>Stuff </li>
@@ -25,13 +25,21 @@
 
 	<p> A p tag here and there</p>
 
-	<ol id="bee">
+	<ol id="banana">
 	</ol>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
+		jQuery('ul#apple li')
+		.click(function(){alert('This list was clicked.')})
+		.parent()
+			.clone(true)
+				.find('li')
+				.appendTo('#banana')
+			.end()
+		.end()
+		.remove();
 </script>
 </body>
 </html>
