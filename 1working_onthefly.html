@@ -23,8 +23,8 @@
 <script>
 	$(function(){
 		//jQuery("<p><a>stuffffffff</a></p>");
-		jQuery("<p><a>stuffffffff</a></p>").find("a").attr("href","http://www.amazon.com").end().appendTo("h3");
-
+		jQuery("<p><a>stuffffffff</a></p>").find("a").attr("href","http://www.amazon.com").end().appendTo("h3"); // inside h3 tags
+		jQuery(document.createElement('p')).appendTo('p:eq(0)');  // inside p tag inside h3 tags
 
 	});
 </script>
