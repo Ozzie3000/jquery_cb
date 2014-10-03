@@ -18,15 +18,29 @@
 
 	<a>Empty a tag before jQuery 1</a>
 	<br />
-	<a id="banana">Empty a tag before jQuery 2</a>
+	<a id="apple">a tag with ID before jQuery 1</a>
 	<br />
-	<a id="chile" title="bob">Empty a tag before jQuery 3</a>
+	<a id="banana">a tag with ID before jQuery 2</a>
+	<br />
+	<a id="canalope" title="bob">a tag with ID before jQuery 3</a>
+	<br />
+	<a id="date-plum" class="hide_me">a tag with ID and CLASS before jQuery 1</a>
+	<br />
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		//alert page URL
+		// addClass, hasClass, removeClass, toggleClass
+		
+		$('a').click(function(){
+			if($(this).hasClass('hide_me')){
+				$(this).fadeOut(1500).delay(3000).fadeIn(1500);
+			}else{
+				alert("does not have class hide_me");
+			}
+		});
+		
 		
 	});
 </script>
