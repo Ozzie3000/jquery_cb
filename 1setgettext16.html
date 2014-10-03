@@ -15,7 +15,7 @@
 	<h3>1.16 Get and Set HTML content</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-
+	<span>1)... &lt;  ...and this guy over here 2)... &gt; ...</span>
 	<p></p>
 
 
@@ -24,6 +24,9 @@
 	$(function(){
 		jQuery('p').text("Hello everyone.  \"I am that I am\". Who said this?  Also this is a <p> element.");
 			alert(jQuery('p').text());
+			/* text vs html
+			*text method will convert tags to their HTML entities such as &lt; and &get;)
+			*/
 	});
 </script>
 </body>
