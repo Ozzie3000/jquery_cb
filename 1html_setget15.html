@@ -15,15 +15,16 @@
 	<h3>1.15 HTML content; get and set</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-
-
+	<keygen></keygen>
+	<span>Empty p tag below</span>
+	<p></p>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
-
+		jQuery('p').html("<strong>Where did I come from?</strong>, I am a <em>&lt;p&gt;</em> element.");
+		alert(jQuery('p').html());
 
 
 	});
