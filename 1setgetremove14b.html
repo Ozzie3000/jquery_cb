@@ -8,8 +8,11 @@
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 -->
 <script type="text/javascript">
-
 </script>
+<style type="text/css">
+	.something_else{opacity: 0.5;}
+	.bob{font-weight: 800; font-size: 24px}
+</style>
 </head>
 <body>
 	<h3>1.14B DOM: remove, set, get</h3>
@@ -18,13 +21,15 @@
 
 	<a>Empty a tag before jQuery 1</a>
 	<br />
-	<a id="apple">a tag with ID before jQuery 1</a>
+	<a id="apple" class="something_else">a tag with ID before jQuery 1</a>
 	<br />
 	<a id="banana">a tag with ID before jQuery 2</a>
 	<br />
-	<a id="canalope" title="bob">a tag with ID before jQuery 3</a>
+	<a id="canalope" class="bob" title="bob">a tag with ID before jQuery 3</a>
 	<br />
 	<a id="date-plum" class="hide_me">a tag with ID and CLASS before jQuery 1</a>
+	<br />
+	<a id="date-plum" class="remove_me">a tag with ID and CLASS before jQuery 2</a>
 	<br />
 
 
@@ -35,13 +40,28 @@
 		
 		$('a').click(function(){
 			if($(this).hasClass('hide_me')){
-				$(this).fadeOut(1500).delay(3000).fadeIn(1500);
+				$(this).fadeOut(1500).delay(2000).fadeIn(1500);
 			}else{
 				alert("does not have class hide_me");
 			}
 		});
 		
+		$('a').click(function(){
+			if($(this).hasClass('remove_me')){
+				$(this).slideToggle(1500).delay(2000).slideToggle(1500);
+			}else{
+				alert("does not have class remove_me");
+			}
+		});
 		
+		$('a#apple').click(function(){
+			$(this).toggleClass('something_else');
+		});
+
+		$('a#canalope').click(function(){
+			$(this).removeClass('bob');
+		});
+
 	});
 </script>
 </body>
