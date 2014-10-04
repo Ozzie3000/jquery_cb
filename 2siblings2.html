@@ -16,13 +16,20 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-
+	<div id="content">
+		<h1>Main title goes here</h1>
+		<h2>Second title</h2>
+		<p>Some content goes here</p>
+		<h2>Another second title</h2>
+		<p>More content...</p>
+	</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
+		//select h2 that follows an h1
+		var h2_follows = jQuery('h1 + h2');
 
 
 
