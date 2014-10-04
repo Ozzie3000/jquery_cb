@@ -25,15 +25,17 @@
 	</div>
 
 
+
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		//select h2 that follows an h1
-		var h2_follows = jQuery('h1 + h2');
-
-
-
+	//var a_follower = jQuery('h1 + h2');
 	});
+		
+		//select h2 that follows an h1
+		var a_follower = jQuery('h1 + h2');
+		var b_follower = jQuery('h1 + p'); // nothing	
+		var all_sibs = jQuery('h1').siblings('h2,h3,h4,p');
 </script>
 </body>
 </html>
