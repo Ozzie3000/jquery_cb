@@ -33,6 +33,27 @@
 		<li><spa><a href="#atag4">Anchor here 4</a></span></li>
 	</ul>
 
+	<p>
+		jQuery('> p', '#content'); <br />
+		//is the same as <br />
+		jQuery('#content> p'); <br />
+		//this is more pragmatic <br />
+		jQuery('#content').children(); <br />
+		//which is faster than this but equal in results <br />
+		jQuery('#content > *'); <br />
+	<br />
+		var anchorss = jQuery('a'); <br />
+		// get all direct kids of all a tags <br />
+	<br />
+		//1 - fastest <br />
+		anchorss.children(); <br />
+		//2<br />
+		jQuery('>*'); <br />
+		//3 <br />
+		anchorss.find('>*'); <br />
+
+	</p>
+
 	<input type="button" onclick="alert(cddc.length)" value="length of cddc" >
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
@@ -42,6 +63,25 @@
 	});
 	var cddc = jQuery('#nav li > a');
 	//how many?  typ
+
+	jQuery('> p', '#content'); 
+	//is the same as
+	jQuery('#content> p');
+	//this is more pragmatic
+	jQuery('#content').children();
+	//which is faster than this but equal in results
+	jQuery('#content > *');
+
+	var anchorss = jQuery('a');
+	// get all direct kids of all a tags
+
+	//1 - fastest
+	anchorss.children();
+	//2
+	jQuery('>*');
+	//3
+	anchorss.find('>*');
+
 </script>
 </body>
 </html>
