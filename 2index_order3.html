@@ -36,22 +36,33 @@
 	<input type="button" id="submit" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-<ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>First item</li>
-  <li>Second item</li>
-</ol>
+  <ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>First item</li>
+    <li>Second item</li>
+  </ol>
 
+  <table>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+  </table>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
 		
-
-
-
 	});
+
+//first li
+jQuery('ol li:first');
+jQuery('ol li:eq(0)');
+jQuery('ol li:lt(1)');
+
+
 </script>
 </body>
 </html>
