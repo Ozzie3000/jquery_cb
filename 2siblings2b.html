@@ -46,7 +46,11 @@
 	</div>
 
 	<ul>
-		<li>First item</li>
+		<li>Prima voce</li>
+		<li class="selected">Seconda voce</li>
+		<li>Terzo voce</li>
+		<li>Quarto voce</li>
+		<li>QUinto voce</li>
 	</ul>
 
 
@@ -56,7 +60,7 @@
 	
 	});
 		
-
+	jQuery('li.selected').nextAll('li');
 </script>
 </body>
 </html>
