@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery | Selecting Specific Siblings</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<!--  if necessary
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+-->
+<script type="text/javascript">
+</script>
+<style type="text/css">
+#submit {
+  background-color: #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 16px;
+  text-decoration: none;
+  cursor: crosshair;
+  border:none;
+  padding: 7px;
+}
+
+#submit:hover {
+  border: none;
+  background:red;
+  box-shadow: 0px 0px 1px #777;
+  font-size: 32px;  
+}
+</style>
+</head>
+<body>
+	<h3>2.2b Selecting Specific Siblings</h3>
+	<input type="button" id="submit" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<div id="content">
+		<h1>Main title goes here</h1>
+		<h2>Second title</h2>
+		<p>Some content goes here</p>
+		<h2>Another second title</h2>
+		<p>More content...</p>
+	</div>
+
+	<ul>
+		<li>Prima voce</li>
+		<li class="selected">Seconda voce</li>
+		<li>Terzo voce</li>
+		<li>Quarto voce</li>
+		<li>QUinto voce</li>
+	</ul>
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+	$(function(){
+	
+	});
+		
+	jQuery('li.selected').nextAll('li');
+	//or you can use this css combinator
+	jQuery('li.selected~li');
+</script>
+</body>
+</html>
