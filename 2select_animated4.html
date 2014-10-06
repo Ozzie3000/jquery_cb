@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery | 2.4 Selecting elements that are Currently animating</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<!--  if necessary
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+-->
+<script type="text/javascript">
+</script>
+<style type="text/css">
+#submit {
+  background-color: #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 16px;
+  text-decoration: none;
+  cursor: crosshair;
+  border:none;
+  padding: 7px;
+}
+
+#submit:hover {
+  border: none;
+  background:red;
+  box-shadow: 0px 0px 1px #777;
+  font-size: 32px;  
+}
+</style>
+</head>
+<body>
+	<h3>2.4 Selecting elements that are Currently animating</h3>
+	<input type="button" id="submit" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+  <div>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph</p>
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+	$(function(){
+		
+	});
+
+  //check for animation
+  var myElem = jQuery('div');
+  if(myElem.is(':animated')){
+  alert("animated");
+  }else{
+  alert("not animated");
+  }
+
+  //jQuery('div:not(div:animated)').animate({height:200});
+</script>
+</body>
+</html>
