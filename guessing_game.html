@@ -33,11 +33,39 @@
 </style>
 </head>
 <body>
-	<h3></h3>
+
 	<input type="button" id="submit" value="Refreshness" onclick="location.reload();" />
-	<br /><br />
+	<br />
 
+  <h3>Guessing Game</h3>
 
+  <p>Instructions:</p>
+  <ol>
+    <li>You will guess a number between 0 and X; you pick x.</li>
+    <li>You will get 3 guesses</li>
+    <li>If you don't get it in 3 guesses try again.</li>
+  </ol>
+
+  <p id="re_btn">a refresh button because i'm lazy.... ha ha</p id="re_btn">
+  <input type="button" value="refresh the page" onclick="location.reload()" id="rere" />
+  <hr>
+  <br />
+
+  <input type="button" value="1) pick the end range" onclick="picker();" id="b1" class="btn" />
+  <input type="button" value="2) Start!" onclick="numberz();" id="b2" class="btn"/>
+  <input type="button" value="3) what is the rando number" onclick="realNo();" id="b3" class="btn" />
+  
+  
+  <div id="special">
+    <br />
+    <section id="here0">&nbsp;</section>
+    <br />
+    <section id="here1">&nbsp;</section>
+    <br />
+    <section id="here2">&nbsp;</section>
+    <br />
+    <section id="here3">&nbsp;</section>
+  </div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
