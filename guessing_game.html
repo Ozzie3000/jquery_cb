@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 -->
 <script type="text/javascript">
+
 </script>
 <style type="text/css">
 #submit {
@@ -25,6 +26,8 @@
 }
 
 #special{
+  position: absolute;
+  margin-top: 40px;
   font-size: 24px;
   color: red;
   font-family: Georgia;
@@ -64,30 +67,69 @@
   <hr>
   <br />
 
-  <input type="button" value="1) pick the end range" onclick="picker();" id="b1" class="btn" />
-  <input type="button" value="2) Start!" onclick="numberz();" id="b2" class="btn"/>
-  <input type="button" value="3) random number???" onclick="realNo();" id="b3" class="btn" />
-  
-  
+  <div>
+    <input type="button" value="1) pick the end range" id="b1" class="btn" />
+    <input type="button" value="2) Start!" id="b2" class="btn"/>
+    <input type="button" value="3) random number???" id="b3" class="btn" />
+  </div>
+  <br /><br />
   <div id="special">
+    <section id="here0">Let's go:</section>
     <br />
-    <section id="here0">&nbsp;</section>
+    <section id="here1">Ready:</section>
     <br />
-    <section id="here1">&nbsp;</section>
+    <section id="here2">Set:</section>
     <br />
-    <section id="here2">&nbsp;</section>
-    <br />
-    <section id="here3">&nbsp;</section>
+    <section id="here3">Go!</section>
   </div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
-		
 
+    function picker(){
+      var ceiling = prompt("Pick the highest possible number it could be");
+      this.ceiling = parseInt(ceiling);
+    }
+    
+    function numberz(){
+      var rando = Math.round(Math.random()*ceiling);
+      this.randoNum = rando;
+      for (i=0; i<3; i++){
+        var guessA = prompt("Guess a number 0 - "+ceiling);
+        this.guessA = parseInt(guessA);
+        if(guessA == null){
+          document.getElementById("here1").innerHTML = "Please pick a number";
+        }
+        if(guessA > randoNum){
+          document.getElementById("here3").innerHTML = "Nope: "+guessA+" is too high. Go lower.";
+        }
+        if(guessA < randoNum){
+          document.getElementById("here2").innerHTML = "Nope: "+guessA+" is too low. Go higher.";
+        }
+        if(guessA == randoNum){
+          document.getElementById("here1").innerHTML = "Dude you are the man! "+randoNum+" was correct";
+          i = 4;
+        }
+      }
+    //  alert(randoNum + " was the real number.");
+    }
 
+    function realNo(){
+      alert(randoNum + " was the real number.");
+    }
 
+    $("#b1").click(function(){ 
+      $("#here0").text("It has begun!!!!");
+    });
+    $("#b1").click(this.picker());
+
+/*
+    $("#here0").click(function(){
+      $("#here0").text("We have a winner!!! Winner Winner Chicken Dinner");
+    });
+*/
 	});
 </script>
 </body>
