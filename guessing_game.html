@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+$(this<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>jQuery | </title>
@@ -120,10 +120,24 @@
       alert(randoNum + " was the real number.");
     }
 
-    $("#b1").click(function(){ 
-      $("#here0").text("It has begun!!!!");
-    });
-    $("#b1").click(this.picker());
+    $("#b1")
+      .click(function(){ 
+        picker();
+      })
+      .click(function(){ 
+        $("#here0").text("Ok higest number it could be: " +ceiling);
+      })
+    ;
+    
+    $("#b2")
+      .click(function(){
+        numberz();
+      })
+
+    $("#b3")
+      .click(function(){
+        realNo();
+      })
 
 /*
     $("#here0").click(function(){
