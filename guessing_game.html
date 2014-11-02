@@ -1,4 +1,4 @@
-$(this<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>jQuery | </title>
@@ -67,21 +67,40 @@ $(this<!DOCTYPE html>
   <hr>
   <br />
 
+
+
+<!--
   <div>
     <input type="button" value="1) pick the end range" id="b1" class="btn" />
     <input type="button" value="2) Start!" id="b2" class="btn"/>
     <input type="button" value="3) random number???" id="b3" class="btn" />
+ 
   </div>
+-->
+
+  Pick the end Range: <input type="text" id="txt_name"  />
+  Guess 1: <input type="text" id="guess_1" class="guessed" />
+  Guess 2: <input type="text" id="guess_2" class="guessed" />
+  Guess 3: <input type="text" id="guess_3" class="guessed" />
+
   <br /><br />
+  <div>
+    <section></section>
+  </div>
   <div id="special">
     <section id="here0">Let's go:</section>
+    <section id="biggest"></section>
     <br />
     <section id="here1">Ready:</section>
+    <section id="too_high"></section>
     <br />
     <section id="here2">Set:</section>
+    <section id="perfecto"></section>
     <br />
     <section id="here3">Go!</section>
+    <section id="too_low"></section>
   </div>
+
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
@@ -138,6 +157,12 @@ $(this<!DOCTYPE html>
       .click(function(){
         realNo();
       })
+
+    $("#txt_name").on("keyup change", function() {
+      ceiling = this.value;
+      $("#biggest").text(this.value);
+      
+    });
 
 /*
     $("#here0").click(function(){
