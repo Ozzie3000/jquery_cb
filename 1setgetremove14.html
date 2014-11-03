@@ -49,6 +49,14 @@
 			$("a").toggleClass("main other");
 		});
 
+		jQuery('button').click(function(){
+  		if($("a").hasClass("main other")){
+				alert("now has class main other");
+			}else{
+				alert("no longer has main other")
+			}
+		});
+
 	});
 </script>
 </body>
