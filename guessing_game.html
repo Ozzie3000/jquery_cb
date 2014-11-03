@@ -92,9 +92,9 @@
   Pick the end Range: <input type="text" id="domain"  />
   
   <br /><br />
-  Guess 1: <input type="text" id="guess_1" class="guessed" />
-  Guess 2: <input type="text" id="guess_2" class="guessed" />
-  Guess 3: <input type="text" id="guess_3" class="guessed" />
+  <input type="text" id="guess_1" class="guessed" placeholder="Guess 1:" />
+  <input type="text" id="guess_2" class="guessed" placeholder="Guess 2:" />
+  <input type="text" id="guess_3" class="guessed" placeholder="Guess 3:" />
 
   <br /><br />
   <div>
@@ -131,7 +131,7 @@
     }
 
     function showIt(){
-     document.getElementById("lucky_num").innerHTML = randoNum;
+     document.getElementById("lucky_num").innerHTML = "The random number was : " + randoNum;
     }
 
 	$(function(){
