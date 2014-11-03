@@ -11,6 +11,12 @@
 
 </script>
 <style type="text/css">
+@font-face {
+  font-family: 'WebOswald';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://themes.googleusercontent.com/static/fonts/oswald/v5/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
 #submit {
   background-color: #ccc;
   -moz-border-radius: 5px;
@@ -31,6 +37,11 @@
   font-size: 24px;
   color: red;
   font-family: Georgia;
+}
+#perfecto{
+  font-family: 'Oswald', Georgia, sans-serif; 
+  font-weight: 700;
+  color: blue;
 }
 #b1{ margin-left: 20px;}
 #b1, #b2, #b3{float: left; display: inline-block; padding: 20px; }
@@ -78,7 +89,9 @@
   </div>
 -->
 
-  Pick the end Range: <input type="text" id="txt_name"  />
+  Pick the end Range: <input type="text" id="domain"  />
+  
+  <br /><br />
   Guess 1: <input type="text" id="guess_1" class="guessed" />
   Guess 2: <input type="text" id="guess_2" class="guessed" />
   Guess 3: <input type="text" id="guess_3" class="guessed" />
@@ -88,56 +101,71 @@
     <section></section>
   </div>
   <div id="special">
-    <section id="here0">Let's go:</section>
-    <section id="biggest"></section>
+    <section id="here0">Ok the end range is: </section>
+    <section id="picked"></section>
     <br />
-    <section id="here1">Ready:</section>
+    <section id="here1">Too high: </section>
     <section id="too_high"></section>
     <br />
-    <section id="here2">Set:</section>
+    <section id="here2">Just right: </section>
     <section id="perfecto"></section>
     <br />
-    <section id="here3">Go!</section>
+    <section id="here3">Too low: </section>
     <section id="too_low"></section>
+    <br />
+    <section class="lucky_num" id="lucky_num">The answer is: </section>
+    <input type="button" class="lucky_num" value="show it" onclick="showIt();">
   </div>
 
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
+    function realNo(){
+      alert(randoNum + " was the real number.");
+    }
+
+    function mr_rando(){
+      var rando = Math.round(Math.random()*ceiling);
+      this.randoNum = rando;
+    }
+
+    function showIt(){
+     document.getElementById("lucky_num").innerHTML = randoNum;
+    }
+
 	$(function(){
+    $(".lucky_num").hide();
 
     function picker(){
       var ceiling = prompt("Pick the highest possible number it could be");
       this.ceiling = parseInt(ceiling);
     }
     
+    i=0;
     function numberz(){
-      var rando = Math.round(Math.random()*ceiling);
-      this.randoNum = rando;
-      for (i=0; i<3; i++){
-        var guessA = prompt("Guess a number 0 - "+ceiling);
+
+      if (i<20){
+        var guessA = g_1;
         this.guessA = parseInt(guessA);
         if(guessA == null){
           document.getElementById("here1").innerHTML = "Please pick a number";
         }
         if(guessA > randoNum){
-          document.getElementById("here3").innerHTML = "Nope: "+guessA+" is too high. Go lower.";
+          document.getElementById("too_high").innerHTML = "Nope: "+guessA+" is too high. Go lower.";
         }
         if(guessA < randoNum){
-          document.getElementById("here2").innerHTML = "Nope: "+guessA+" is too low. Go higher.";
+          document.getElementById("too_low").innerHTML = "Nope: "+guessA+" is too low. Go higher.";
         }
         if(guessA == randoNum){
-          document.getElementById("here1").innerHTML = "Dude you are the man! "+randoNum+" was correct";
+          document.getElementById("perfecto").innerHTML = "Dude you are the man/woman! "+randoNum+" was correct";
           i = 4;
         }
       }
+      i++;
     //  alert(randoNum + " was the real number.");
     }
 
-    function realNo(){
-      alert(randoNum + " was the real number.");
-    }
 
     $("#b1")
       .click(function(){ 
@@ -158,12 +186,30 @@
         realNo();
       })
 
-    $("#txt_name").on("keyup change", function() {
+    $("#domain").on("keyup change", function() {
       ceiling = this.value;
-      $("#biggest").text(this.value);
+      $("#picked").text(this.value);
+       mr_rando();
+      $(this).fadeOut(1500);
       
     });
 
+    $("#guess_1").on("keyup change", function() {
+      g_1 = this.value;
+      numberz();
+      $(this).fadeOut(1500);
+    });
+    $("#guess_2").on("keyup change", function() {
+      g_1 = this.value;
+      numberz();
+      $(this).fadeOut(1500);
+    });
+    $("#guess_3").on("keyup change", function() {
+      g_1 = this.value;
+      numberz();
+      $(this).fadeOut(1500);
+      $(".lucky_num").fadeIn(3000);
+    });
 /*
     $("#here0").click(function(){
       $("#here0").text("We have a winner!!! Winner Winner Chicken Dinner");
