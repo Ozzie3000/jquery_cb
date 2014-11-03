@@ -10,6 +10,16 @@
 <script type="text/javascript">
 
 </script>
+<style type="text/css">
+	.main{
+		font-size: 120%;
+		color: red;
+	}
+	.other{
+		text-align: center;
+		border: 1px solid blue;
+	}
+</style>
 </head>
 <body>
 	<h3>1.14 DOM: remove, set, get</h3>
@@ -22,6 +32,8 @@
 	<br />
 	<a id="chile" title="bob">Empty a tag before jQuery 3</a>
 
+	<br /><br />
+	<button>Toggle class "main" and class "other" for p tags</button>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
@@ -32,6 +44,11 @@
 		);
 		jQuery('a#banana').attr({'href':'https://www.amazon.com','title':'Amazon!'}).attr('href');
 		jQuery('a#chile').removeAttr("title");
+
+		jQuery('button').click(function(){
+			$("a").toggleClass("main other");
+		});
+
 	});
 </script>
 </body>
