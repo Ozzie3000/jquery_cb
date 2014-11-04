@@ -16,9 +16,11 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 	<span>1)... &lt;  ...and this guy over here 2)... &gt; ...</span>
+	<br />
 	<p></p>
 
-
+	<br />
+	<input id="spanner" type="button" value="Give span a border" />
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	$(function(){
@@ -27,6 +29,10 @@
 			/* text vs html
 			*text method will convert tags to their HTML entities such as &lt; and &get;)
 			*/
+
+			jQuery("#spanner").click(function(){
+				jQuery("span").css("border","5px solid blue");
+			});
 	});
 </script>
 </body>
