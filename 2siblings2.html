@@ -30,6 +30,33 @@
   box-shadow: 0px 0px 1px #777;
   font-size: 32px;  
 }
+
+	.examples:hover {
+    color: red;
+    position: relative;
+  }
+  .examples[data-title]:hover:after  {
+    content: attr(data-title);
+    padding: 4px 8px;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    z-index: 140px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #222;
+    -webkit-box-shadow: 0px 0px 4px #222;
+    box-shadow: 0px 0px 4px #222;
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  }
 </style>
 </head>
 <body>
@@ -44,19 +71,43 @@
 		<h2>Another second title</h2>
 		<p>More content...</p>
 	</div>
-
-
+<br /><br />
+	<h3>The following items will update</h3>
+	<p id="var_1" class="examples" data-title="$('h1+h2')">a) I will update with reponse: </p>
+	<p id="var_2" class="examples" data-title="$('h1 + p')">b) I will update with reponse: </p>
+	<p id="var_3" class="examples" data-title="$('h1').siblings('h2,h3,h4,p')">c) I will update with reponse: </p>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
-	$(function(){
+	(function($){
 	//var a_follower = jQuery('h1 + h2');
-	});
-		
+
 		//select h2 that follows an h1
-		var a_follower = jQuery('h1 + h2');
-		var b_follower = jQuery('h1 + p'); // nothing	
-		var all_sibs = jQuery('h1').siblings('h2,h3,h4,p');
+		a_follower = jQuery('h1 + h2');
+		b_follower = jQuery('h1 + p'); // nothing	
+		all_sibs = jQuery('h1').siblings('h2,h3,h4,p');
+
+		$("#var_1").click(function(){
+			$("#var_1").html(a_follower);
+		});
+
+		$("#var_2").click(function(){
+			if(b_follower > 0){
+				$("#var_2").html(b_follower);
+			}else{
+				$("#var_2").html("<b>Nothing to show</b>");
+			}
+		});
+
+		$("#var_3").click(function(){
+			$("#var_3").html(all_sibs);
+		});
+
+
+
+
+	})(jQuery);
+		
 </script>
 </body>
 </html>
