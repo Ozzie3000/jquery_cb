@@ -12,6 +12,34 @@
 <style type="text/css">
 	em{font-size: 18px; color: blue;}
 	span{color: red; font-weight: 900}
+
+	a:hover {
+	  color: red;
+	  position: relative;
+	}
+
+	a[data-title]:hover:after  {
+	  content: attr(data-title);
+	  padding: 4px 8px;
+	  color: #333;
+	  position: absolute;
+	  left: 0;
+	  top: 100%;
+	  white-space: nowrap;
+	  z-index: 140px;
+	  -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;
+	  border-radius: 5px;
+	  -moz-box-shadow: 0px 0px 4px #222;
+	  -webkit-box-shadow: 0px 0px 4px #222;
+	  box-shadow: 0px 0px 4px #222;
+	  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+	  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
+	  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+	  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+	  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+	  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+	}
 </style>
 </head>
 <body>
@@ -25,12 +53,13 @@
 
 	<p>var cddc = jQuery('#nav li > a');</p>
 
-	<a href="/somewhere" title="don't click me">STufF</a>
+	<a href="#" id="samp" data-title="don't click me. I don't go anywhere">STufF</a>
+
 	<ul id="nav">
-		<li><a href="#atag1">Anchor here 1</a></li>
-		<li><a href="#atag2">Anchor here 2</a></li>
-		<li><a href="#atag3">Anchor here 3</a></li>
-		<li><spa><a href="#atag4">Anchor here 4</a></span></li>
+		<li><a href="#atag1" data-title="I also don't go anywhere">Anchor here 1</a></li>
+		<li><a href="#atag2" data-title="I also don't go anywhere">Anchor here 2</a></li>
+		<li><a href="#atag3" data-title="I also don't go anywhere">Anchor here 3</a></li>
+		<li><spa><a href="#atag4" data-title="I also don't go anywhere">Anchor here 4</a></span></li>
 	</ul>
 
 	<p>
