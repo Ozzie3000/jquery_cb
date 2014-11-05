@@ -79,7 +79,7 @@
 	</div>
 
 	  <p>
-	  	$
+	  	
 		</p>
 	  <button id="btn_4results">Show results from above</button>
 	  <div id="results" style="margin-top:100px; color:red;">about to change</div>
@@ -92,10 +92,11 @@
 		anchors.click(function(){
 			anchors.not(this).removeClass("clicked");
 			anchors.not(this).addClass("not_clicked");
-			this.removeClass("not_clicked");
-			this.addClass("clicked");
 		});
-
+		anchors.click(function(){
+			$(this).removeClass("not_clicked");
+			$(this).addClass("clicked");
+		});
 
 
 	})(jQuery);
