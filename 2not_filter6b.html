@@ -33,7 +33,7 @@
 	a:hover{
 		background-color: black;
 	}
-	.clicked{height: 50px;}
+	.clicked{height: 50px; background-color: red;}
 	.not_clicked{height: 40px;}
 </style>
 </head>
@@ -47,10 +47,10 @@
 	  <header id="page_header">
 		  <nav>
 		  	<ul>
-		  		<li><a href="#p_1" name="p_1">Paragraph 1</a></li>
-		  		<li><a href="#p_2">Paragraph 2</a></li>
-		  		<li><a href="#p_3">Paragraph 3</a></li>
-		  		<li><a href="#results">results</a></li>
+		  		<li><a href="#p_1" class="not_clicked">Paragraph 1</a></li>
+		  		<li><a href="#p_2" class="not_clicked">Paragraph 2</a></li>
+		  		<li><a href="#p_3" class="not_clicked">Paragraph 3</a></li>
+		  		<li><a href="#results" class="not_clicked">results</a></li>
 		  	</ul>
 		  </nav>
 		</header>
@@ -92,6 +92,8 @@
 		anchors.click(function(){
 			anchors.not(this).removeClass("clicked");
 			anchors.not(this).addClass("not_clicked");
+			this.removeClass("not_clicked");
+			this.addClass("clicked");
 		});
 
 
