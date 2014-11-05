@@ -85,5 +85,11 @@
 
 	})(jQuery);
 </script>
+<!--  even trickier since hidden and visible look at dimensions of parents instead of CSS property use a test function
+	$("*").filter(function(){
+		return $(this).css("display") ==="none"  && $(this).css("visibility") !== "hidden";
+	});
+
+-->
 </body>
 </html>
