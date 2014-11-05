@@ -46,13 +46,14 @@ body{
   }
   .diff_title[data-title]:hover:after  {
     content: attr(data-title);
+    font-size: 70%;
     padding: 4px 8px;
     color: #333;
     position: absolute;
     left: 0;
     top: 100%;
     white-space: nowrap;
-    z-index: 140px;
+    z-index: 10px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
