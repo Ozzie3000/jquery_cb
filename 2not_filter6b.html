@@ -8,25 +8,54 @@
 </script>
 <link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
 <style type="text/css">
-	d
+	body{ padding: 5px 15px;}
+	header{ padding-bottom: 20px; }
+	header#page_header nav ul li{
+		list-style: none;
+		position: relative;
+	}
+
+	a{
+		position: relative;
+		text-decoration: none;
+		float: left;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 15px;
+		margin: 0 15px;
+		border-top-right-radius: 9px;
+		border-top-left-radius: 9px;
+		background-color: grey;
+		font-size: 28px;
+		color: white;
+		font-family: "Oswald", Georgia, sans-serif; 
+	}
+	a:hover{
+		background-color: black;
+	}
+	.clicked{height: 50px;}
+	.not_clicked{height: 40px;}
 </style>
 </head>
 <body>
 	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-  <h1>more of using not to filter out</h1>
-  <h2>Now lets place a few things below so we can begin the test.</h2>
+  <h1>more of using not to filter out<br /> Now lets place a few things below so we can begin the test.</h1>
+  <h2></h2>
 
-  <header id="page_header">
-	  <nav>
-	  	<ul>
-	  		<li><a href="#p_1"></a>Paragraph 1</li>
-	  		<li><a href="#p_2"></a>Paragraph 2</li>
-	  		<li><a href="#p_3"></a>Paragraph 3</li>
-	  		<li><a href="#p_4"></a>Paragraph 4</li>
-	  	</ul>
-	  </nav>
-	</header>
+	<div>
+	  <header id="page_header">
+		  <nav>
+		  	<ul>
+		  		<li><a href="#p_1" name="p_1">Paragraph 1</a></li>
+		  		<li><a href="#p_2">Paragraph 2</a></li>
+		  		<li><a href="#p_3">Paragraph 3</a></li>
+		  		<li><a href="#results">results</a></li>
+		  	</ul>
+		  </nav>
+		</header>
+	</div>
+	<br />
 
 
 	<div id="here">
@@ -59,7 +88,11 @@
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		
+		var anchors = $("a");
+		anchors.click(function(){
+			anchors.not(this).removeClass("clicked");
+			anchors.not(this).addClass("not_clicked");
+		});
 
 
 
