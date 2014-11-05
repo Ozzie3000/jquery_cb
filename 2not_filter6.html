@@ -13,14 +13,47 @@
 	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
   <h1>using not to filter out</h1>
+  <h2>Now lets place a few tags here to we can begin the test.</h2>
 
+	<div id="here">
+	  <p id="p_1">
+	  	P tag w/ Id p_1 <br />
+	  	"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+	  </p>
 
+	  <p>This is a p without id</p>
+	  <br />
+	  <p id="p_2">This is a p with p_2 id</p>
 
+	  <p>
+	  	P tag w/o anything special<br />
+	  	"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	  </p>
+
+	  <p class="pc_1">
+	  	"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+	  </p>
+	</div>
+
+	  <p>
+	  	var chop = $("#here p:not(#p_1, #p_2)").clone();
+
+			$("#btn_4results").click(function(){
+				$("#results").html(chop);
+			});
+		</p>
+	  <button id="btn_4results">Show results from above</button>
+	  <div id="results" style="margin-top:200px; color:red;">about to change</div>
+	
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		
+		var chop = $("#here p:not(#p_1, #p_2)").clone();
+
+		$("#btn_4results").click(function(){
+			$("#results").html(chop);
+		});
 
 
 
