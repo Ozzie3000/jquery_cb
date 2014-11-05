@@ -7,22 +7,81 @@
 <script type="text/javascript">
 </script>
 <link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
-<style type="text/css"></style>
+<style type="text/css">
+	#sneaky{}
+	.inviz{ visibility: hidden;}
+</style>
 </head>
 <body>
 	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-  <h1>selection based on visibility</h1>
+  <h1>selection based on visibility <em id="sneaky" class="inviz">...Well hello there..</em></h1>
 
+  <button id="shini" style="margin-right:15px">1) Hide/show  visible/invisible paragraphs</button>
+  <button id="gami">2) Show/hide other invisible stuff</button>
 
+	<div id="hide_show1" class="show_me">
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium..."</p>
+	</div>
 
+	<div id="hide_show2" class="show_me">
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	  <p>888888888888888888888888888888888888888888888888888888888888888888888888888</p>
+	</div>
 
+ <footer>If something is set to hidden within another element.  It will register as visible.  You can toggle class to show/hide</footer>
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		
 
+		function show_hide(){
+			if($(".show_me").is(":visible")){
+				$(".show_me").fadeOut(1500);
+				//alert("visible");
+			}
+			if($(".show_me").is(":hidden")){
+				$(".show_me").fadeIn(1500);
+				//alert("hidden");
+			}
+			
+		};
 
+		function sneaker(){
+			if($("#sneaky").is(":hidden")){
+				$("#sneaky").toggleClass("inviz");
+				//alert("hidden");
+			}
+			if($("#sneaky").is(":visible")){
+				$("#sneaky").toggleClass("inviz");
+				//alert("visible");
+			}
+		};
+
+		$("#shini").click(function(){
+			show_hide();
+		});
+		$("#gami").click(function(){
+			sneaker();
+		});
 
 	})(jQuery);
 </script>
