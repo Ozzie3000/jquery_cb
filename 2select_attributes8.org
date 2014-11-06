@@ -7,7 +7,9 @@
 <script type="text/javascript">
 </script>
 <link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
-<style type="text/css"></style>
+<style type="text/css">
+  #here{ color: blue;}
+</style>
 </head>
 <body>
 	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
@@ -25,19 +27,25 @@
     <li><a href="http://www.btu.org">BTU</a></li>  
     <li><a href="http://www.bbc.com">BBC</a></li>
   </ul>  
-    
+     
   <ul>
     <li><a href="https://www.kaiserpermanente.org">Kaiser Permanente org</a></li>
     <li><a href="http://gimp.org">Gimp org</a></li>
     <li><a href="http://code.org">Code org</a></li>
   </ul>
 
+  <button id="clicker">Show results</button>
+  <br /><br />
+  <p>Look below</p>
+  <div id="here">Stuff will update here</div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		 ammy = $('a[href="http://www.amazon.com"]');
-
+		ammy = $('a[href="http://www.amazon.com"]');
+    $("#clicker").click(function(){
+      $("#here").html(ammy);
+    });
 
 
 	})(jQuery);
