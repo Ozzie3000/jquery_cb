@@ -57,6 +57,8 @@
     //will get http and https
     ammy1 = $('a[href]');
 
+    // multiple selectors
+    ammy2 = $("*[title][href]");
 	})(jQuery);
 </script>
 </body>
