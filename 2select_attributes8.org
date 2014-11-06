@@ -49,9 +49,13 @@
       $("#here").html(ammy);
     });
 
+    //will miss https:// hrefs
     bobby = $("a").filter(function(){
       return (new RegExp("http:\/\/(?!' + location.hostname + ')")).test(this.href)
     });
+
+    //will get http and https
+    ammy1 = $('a[href]');
 
 	})(jQuery);
 </script>
