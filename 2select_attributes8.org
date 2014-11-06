@@ -49,6 +49,9 @@
       $("#here").html(ammy);
     });
 
+    bobby = $("a").filter(function(){
+      return (new RegExp("http:\/\/(?!' + location.hostname + ')")).test(this.href)
+    });
 
 	})(jQuery);
 </script>
