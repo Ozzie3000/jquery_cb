@@ -52,3 +52,10 @@
 </script>
 </body>
 </html>
+<!--other types
+  [attr]   match elements with this attribute
+  [attr=val]  match elements with this attribute and value
+  [attr!=val]  match elements noth with attribute or value 
+  [attr^=val]  match elements with attribute and that start with certain value
+  [attr$=val]  match elements with
+
