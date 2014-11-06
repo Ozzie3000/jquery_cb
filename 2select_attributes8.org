@@ -35,6 +35,8 @@
   </ul>
 
   Look for a tags with href value of amazon: <button id="clicker" class="btn">Click Me</button>
+  <br />
+  <em>Notice it actually removes it.  We could clone it, but visually this is more illustrative.</em>
   <br /><br />
   <p>Look below</p>
   <div id="here">Stuff will update here</div>
@@ -57,5 +59,5 @@
   [attr=val]  match elements with this attribute and value
   [attr!=val]  match elements noth with attribute or value 
   [attr^=val]  match elements with attribute and that start with certain value
-  [attr$=val]  match elements with
-
+  [attr$=val]  match elements with attribute and end with this value
+  [attr~=val]  match elements with value with spaces, on either side.  car  will match car, but not cart
