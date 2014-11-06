@@ -34,7 +34,7 @@
     <li><a href="http://code.org">Code org</a></li>
   </ul>
 
-  <button id="clicker">Show results</button>
+  Look for a tags with href value of amazon: <button id="clicker" class="btn">Click Me</button>
   <br /><br />
   <p>Look below</p>
   <div id="here">Stuff will update here</div>
