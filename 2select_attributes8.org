@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery | Selecting Elements based on attributes</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<script type="text/javascript">
+</script>
+<link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
+<style type="text/css"></style>
+</head>
+<body>
+	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+  <h1>Selecting Elements based on attributes</h1>
+
+  <a href="http/www.amazon.com">Amazon</a>
+  <a href="http/www.americanexpress.com">American Express</a>
+  <a href="http/www.americanairlines.com">American Airlines</a>
+
+  <a href="http/www.bls.com">BLS</a>
+  <a href="http/www.btu.org">BTU</a>
+  <a href="http/www.bbc.com">BBC</a>
+
+  <a href="https://www.kaiserpermanente.org">Kaiser Permanente org</a>
+  <a href="www.gimp.org">Gimp org</a>
+  <a href="code.org">Code </a>
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+	(function($){
+		
+
+
+
+	})(jQuery);
+</script>
+</body>
+</html>
