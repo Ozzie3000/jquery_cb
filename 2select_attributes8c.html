@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery | Selecting Elements based on attributes</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<script type="text/javascript">
+</script>
+<link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
+<style type="text/css">
+  #here{ color: blue;}
+</style>
+</head>
+<body>
+	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+  <h1>Selecting Elements based on attributes</h1>
+
+  <ul>
+    <li><a id="anc_1" href="http://www.amazon.com">Amazon</a></li>
+    <li><a id="anc_2" href="http://www.americanexpress.com">American Express</a></li>
+    <li><a id="anc_3" href="http://www.americanairlines.com">American Airlines</a></li>
+  </ul>
+
+  <ul>
+    <li><a id="anc_4" href="http://www.bls.com">BLS</a></li>
+    <li><a id="anc_5" href="http://www.btu.org">BTU</a></li>  
+    <li><a id="anc_6" href="http://www.bbc.com">BBC</a></li>
+  </ul>  
+     
+  <ul>
+    <li><a id="anc_7" href="https://www.kaiserpermanente.org">Kaiser Permanente org</a></li>
+    <li><a id="anc_8" href="http://gimp.org">Gimp org</a></li>
+    <li><a id="anc_9" href="http://code.org">Code org</a></li>
+  </ul>
+
+  Look for any a tags with ids starting with anc_X.  You pick x.  1-9. : 
+  Remember 1-9 only: <input />
+  <button id="clicker" class="btn">Click Me</button>
+  <br />
+  <em>Notice it actually removes it.  We could clone it, but visually this is more illustrative.</em>
+  <br /><br />
+  <p>Look below</p>
+  <div id="here">Stuff will update here</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+	(function($){
+	 
+   anc_x = $("a[id^=anc_]");
+
+   $("#clicker").click(function(){
+    $("#here").html(anc_x);
+   });
+
+	})(jQuery);
+</script>
+</body>
+</html>
+<!--other types
+  [attr]   match elements with this attribute
+  [attr=val]  match elements with this attribute and value
+  [attr!=val]  match elements noth with attribute or value 
+  [attr^=val]  match elements with attribute and that start with certain value
+  [attr$=val]  match elements with attribute and end with this value
+  [attr~=val]  match elements with value with spaces, on either side.  car  will match car, but not cart
