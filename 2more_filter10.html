@@ -14,7 +14,13 @@
 	<br /><br />
   <h1>specific element with specific characteristics: filter() to the rescue</h1>
 
-
+<div>
+	<p>
+		<a href="http://www.amazon.com">Amazon</a>
+		<a href="#">#</a>
+		<a href="https://www.google.com">Google</a>
+	</p>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
@@ -53,10 +59,10 @@
 
 	// writing faster jQuery with native code
 	//your code
-	jQuery("div a:not([href^=http://]), p a:not([href^=http://])");
+	jQuery('div a:not([href^=http://]), p a:not([href^=http://])');
 
 	//native code.  faster, easier to read
-	jQuery("div, p").find("a").not("[href^-http://");
+	jQuery("div, p").find("a").not('[href^=http://]');
 
 	})(jQuery);
 </script>
