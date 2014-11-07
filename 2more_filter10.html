@@ -45,6 +45,12 @@
 		return /\.(jpe?g|png|bmp|gif)(\?.+)?$/.test(this.src);
 	});
 
+	//Select all elements that have 10 or 20 children
+	jQuery("*").filter(function(){
+		var children = jQuery(this).children().length;
+		return children ===10 || children === 20;
+	});
+
 	})(jQuery);
 </script>
 </body>
