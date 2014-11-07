@@ -34,8 +34,9 @@
     <li><a id="anc_9" href="http://code.org">Code org</a></li>
   </ul>
 
-  Look for any a tags with ids starting with anc_X.  You pick x.  1-9. : 
-  Remember 1-9 only: <input />
+  
+  <p>Look for any a tags with ids starting with anc_X.  You pick x.  1-9. : <br /></p>
+  Remember 1-9 only: <input id="user_select"/>
   <button id="clicker" class="btn">Click Me</button>
   <br />
   <em>Notice it actually removes it.  We could clone it, but visually this is more illustrative.</em>
@@ -47,10 +48,19 @@
 <script>
 	(function($){
 	 
-   anc_x = $("a[id^=anc_]");
+   //anc_x = $("a[id^=anc_X]");    // concat x at the end
+   
 
    $("#clicker").click(function(){
-    $("#here").html(anc_x);
+    x_in = document.getElementById("user_select").value;
+    //x_in = parseInt(x_in);
+    string1 = "anc_";
+    string2 = string1.concat(x_in);
+    //string3 = string2.replace(/['"]+/g, '');
+    anc_x3 = $('a[id=string2.replace(/[\'\"], \'\')]');
+    
+   
+    $("#here").html(anc_x3);
    });
 
 	})(jQuery);
