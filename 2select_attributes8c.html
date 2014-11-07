@@ -53,11 +53,11 @@
 
    $("#clicker").click(function(){
     x_in = document.getElementById("user_select").value;
-    //x_in = parseInt(x_in);
-    string1 = "anc_";
-    string2 = string1.concat(x_in);
+    x = parseInt(x_in);
+    //string1 = "anc_";
+    //string2 = string1.concat(x_in);
     //string3 = string2.replace(/['"]+/g, '');
-    anc_x3 = $('a[id=string2.replace(/[\'\"], \'\')]');
+    anc_x3 = $('a[id$='+x+']').clone();
     
    
     $("#here").html(anc_x3);
