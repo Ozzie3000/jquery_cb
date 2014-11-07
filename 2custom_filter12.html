@@ -20,7 +20,10 @@
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		
+		//Sizzle.selectors.filters
+		jQuery.expr[':'].newFilter = function(elem, index, match){
+			return true; //return true/false like filter() method
+		};
 
 
 
