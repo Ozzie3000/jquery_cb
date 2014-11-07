@@ -29,6 +29,22 @@
 	// this that eval to false: Empty strings, 0, undefiend, null, false
 	*/
 
+	this; // reg element object
+	jQuery(this); // jQuery object
+
+	//more practice
+
+	//widths between 100 and 200
+	jQuery("div").filter(function(){
+		var width = jQuery(this).width();
+		return width > 100 && width < 200;
+	});
+
+	//slect images with image extension
+	jQuery("img").filter(function(){
+		return /\.(jpe?g|png|bmp|gif)(\?.+)?$/.test(this.src);
+	});
+
 	})(jQuery);
 </script>
 </body>
