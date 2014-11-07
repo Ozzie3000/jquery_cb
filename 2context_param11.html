@@ -14,14 +14,35 @@
 	<br /><br />
   <h1>context parameter</h1>
 
-
+  <form>
+  	<li>:text</li>
+  	<li>:password</li>
+  	<li>:radio</li>
+  	<li>:checkbox</li>
+  	<li>:submit</li>
+  	<li>:image</li>
+  	<li>:reset</li>
+  	<li>:button</li>
+  	<li>:file</li>
+  	<li>:hidden</li>
+  	<input type="text" />
+  	<input type="" />
+  </form>
 
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		
+		 capture all inputs from FORM before it is submitted
+		$("form").bind("submit", function(){
+			var allInputs = $("input", this);
+			//now you can do stuff with that variable
+			// this is passed so that you only reference input type within form and not all inputs within the whole DOM
+			//the 2nd argument, this, is the context
+		});
 
+		//another example of context
+		$("p", "#content");
 
 
 	})(jQuery);
