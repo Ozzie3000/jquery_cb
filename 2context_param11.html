@@ -40,8 +40,12 @@
 		});
 
 		//another example of context
-		$("p", "#content");
 
+		$("p", "#content");
+		//by default the context is document in jQuery
+
+		//another general way
+		//jQuery( context).find( selector );  //this is really how jQuery thinks
 
 	})(jQuery);
 </script>
