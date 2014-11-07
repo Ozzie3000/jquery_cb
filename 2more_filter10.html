@@ -51,6 +51,13 @@
 		return children ===10 || children === 20;
 	});
 
+	// writing faster jQuery with native code
+	//your code
+	jQuery("div a:not([href^=http://]), p a:not([href^=http://])");
+
+	//native code.  faster, easier to read
+	jQuery("div, p").find("a").not("[href^-http://");
+
 	})(jQuery);
 </script>
 </body>
