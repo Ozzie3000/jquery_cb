@@ -19,10 +19,15 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
+//return all elements with a background image
 	(function($){
-		
-
-
+		jQuery("*").filter(function(){
+			return !!jQuery(this).css("backgroundImage");
+		});
+/* //function will return true if background image is specified
+	//!! converts js into boolean expressions.  
+	// this that eval to false: Empty strings, 0, undefiend, null, false
+	*/
 
 	})(jQuery);
 </script>
