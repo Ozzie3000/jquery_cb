@@ -16,49 +16,54 @@
   font-style: normal;
   font-weight: 700;
   src: url(https://themes.googleusercontent.com/static/fonts/oswald/v5/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-#submit {
-  background-color: #ccc;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius:6px;
-  color: #fff;
-  font-family: 'Oswald';
-  font-size: 16px;
-  text-decoration: none;
-  cursor: crosshair;
-  border:none;
-  padding: 10px;
-}
+  }
+  #submit {
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 16px;
+    text-decoration: none;
+    cursor: crosshair;
+    border:none;
+    padding: 10px;
+  }
 
-#special{
-  position: absolute;
-  margin-top: 40px;
-  font-size: 24px;
-  color: red;
-  font-family: Georgia;
-}
-#perfecto{
-  font-family: 'Oswald', Georgia, sans-serif; 
-  font-weight: 700;
-  color: blue;
-}
-#b1{ margin-left: 20px;}
-#b1, #b2, #b3{float: left; display: inline-block; padding: 20px; }
-#b1, #b2{margin-right: 45px;}
-.btn{
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  font-size: 22px;
-}
-#submit:hover, .btn:hover {
-  border: none;
-  background:red;
-  box-shadow: 0px 0px 1px #777;
-  font-size: 32px;  
-  font-family: 'Oswald';
-}
+  #special{
+    position: absolute;
+    margin-top: 40px;
+    font-size: 24px;
+    color: red;
+    font-family: Georgia;
+  }
+  #perfecto{
+    font-family: 'Oswald', Georgia, sans-serif; 
+    font-weight: 700;
+    color: blue;
+  }
+  #b1{ margin-left: 20px;}
+  #b1, #b2, #b3{float: left; display: inline-block; padding: 20px; }
+  #b1, #b2{margin-right: 45px;}
+  .btn{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 22px;
+  }
+  #submit:hover, .btn:hover {
+    border: none;
+    background:red;
+    box-shadow: 0px 0px 1px #777;
+    font-size: 32px;  
+    font-family: 'Oswald';
+  }
+  .guessed, #domain{ 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; 
+  }
 </style>
 </head>
 <body>
@@ -169,23 +174,10 @@
       }
     }
 
-    function try_again(){
-      if((g_1 == null) || (isNaN(g_1) == true)){
-        document.getElementById("here1").innerHTML = "Please pick a number";
-        x = true;
-        return this.x;
-      }else{
-        x = false;
-        return this.x;
-      }     
-    }
-
 
   $(document).ready(function(){
     $(".lucky_num").hide();
     $("#guess_1, #guess_2, #guess_3").hide();
-
-
 
 
     $("#domain").on("keyup change", function() {
@@ -218,15 +210,28 @@
     $("#guess_2").on("keyup change", function() {
       g_1 = this.value;
       this.g_1 = Number(g_1);
-      numberz();
-      $(this).fadeOut(1500);
+      if((isNaN(g_1) == true) || (g_1 == "")){
+        alert("please pick a NUMBERIC value");
+        document.getElementById("here1").innerHTML = "Please pick a Numeric value";
+      }else{
+        numberz();
+        if (numberz() != true){
+          $(this).delay(1000).fadeOut(1500);
+        } 
+      }
     });
     $("#guess_3").on("keyup change", function() {
       g_1 = this.value;
       this.g_1 = Number(g_1);
-      numberz();
-      $(this).fadeOut(1500);
-      $(".lucky_num").fadeIn(3000);
+      if((isNaN(g_1) == true) || (g_1 == "")){
+        alert("please pick a NUMBERIC value");
+        document.getElementById("here1").innerHTML = "Please pick a Numeric value";
+      }else{
+        numberz();
+        if (numberz() != true){
+          $(this).delay(1000).fadeOut(1500);
+        } 
+      }
     });
 
   });
