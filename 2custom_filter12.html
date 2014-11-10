@@ -7,25 +7,53 @@
 <script type="text/javascript">
 </script>
 <link rel="stylesheet" type="text/css" href="stylesheets/main1.css"></link>
-<style type="text/css"></style>
+<style type="text/css">
+body{ padding: 0 20px;}
+	a{ margin: 20px; font-size: 20px;}
+	.diff_title[data-title]:hover:after {left: 70%; top: 85%; }
+	#sp2{ color: purple;}
+	.span2{ display: block;}
+</style>
 </head>
 <body>
 	<input type="button" id="submit" class="btn" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
   <h1>custom filter selector</h1>
 
+  <div>
+  	<a href="#" style="color:black;" data-title="Color starts off black. jquery turns it lime green" class="diff_title"> # </a> <p></p>
+  	<a href="http://www.amazon.com" style="color:white;" data-title="Color starts off white. jquery turns it lime green" class="diff_title">Amazon</a> <br /><br />
+  	<a href="http://www.yahoo.com" data-title="Color starts off default. jquery turns it lime green" class="diff_title">Yahoo</a> <br /><br />
+  </div>
 
+  <div data-title="unaffected. Display inline by default" class="diff_title">
+  	<span style="color:black;">span 1</span>
+  	<span id="sp2">span 2</span> 
+  	<span>span 3</span> 
+  </div>
+  <br />
 
+  <div  data-title="CSS display block. jquery turns it red" class="diff_title">
+  	<span style="color:grey;" class="span2">span 4</span>
+  	<span id="sp2" class="span2">span 5</span>
+  	<span class="span2">span 6</span>
+  </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 	(function($){
-		//Sizzle.selectors.filters
+		//Sizzle.selectors.filters    . basic set up
 		jQuery.expr[':'].newFilter = function(elem, index, match){
 			return true; //return true/false like filter() method
 		};
 
+		jQuery.expr[':'].inline = function(elem){
+			return jQuery(elem).css('display') === 'inline';
+		};
+		//time to use it below
 
+		jQuery('div a:inline').css('color', '#00dd2f');
+		jQuery('span').filter(':not(:inline)').css('color', 'red');
 
 	})(jQuery);
 </script>
