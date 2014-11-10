@@ -63,8 +63,8 @@
 </head>
 <body>
 
-	<input type="button" id="submit" value="Refresh the Page" onclick="location.reload();" />
-	<br />
+  <input type="button" id="submit" value="Refresh the Page" onclick="location.reload();" />
+  <br />
 
   <h3>Guessing Game</h3>
 
@@ -133,10 +133,6 @@
      document.getElementById("lucky_num").innerHTML = "The random number was : " + randoNum;
     }
 
-	$(document).ready(function(){
-    $(".lucky_num").hide();
-    $("#guess_1, #guess_2, #guess_3").hide();
-
     function picker(){
       var ceiling = prompt("Pick the highest possible number it could be");
       this.ceiling = Number(ceiling);
@@ -147,27 +143,48 @@
     }
     
     i=0;
+
     function numberz(){
 
       if (i<20){
         var guessA = g_1;
         this.guessA = Number(guessA);
         if((guessA == null) || (isNaN(guessA) == true)){
-          document.getElementById("here1").innerHTML = "Please pick a number";
+          document.getElementById("here1").innerHTML = "Please pick a Numeric value";
+          x = true;
+          return this.x;
+        }else{
+          if(guessA > randoNum){
+            document.getElementById("too_high").innerHTML = "Nope: "+guessA+" is too high. Go lower.";
+          }
+          if(guessA < randoNum){
+            document.getElementById("too_low").innerHTML = "Nope: "+guessA+" is too low. Go higher.";
+          }
+          if(guessA == randoNum){
+            document.getElementById("perfecto").innerHTML = "Dude you are the man/woman! "+randoNum+" was correct";
+            i = 4;
+          }
         }
-        if(guessA > randoNum){
-          document.getElementById("too_high").innerHTML = "Nope: "+guessA+" is too high. Go lower.";
-        }
-        if(guessA < randoNum){
-          document.getElementById("too_low").innerHTML = "Nope: "+guessA+" is too low. Go higher.";
-        }
-        if(guessA == randoNum){
-          document.getElementById("perfecto").innerHTML = "Dude you are the man/woman! "+randoNum+" was correct";
-          i = 4;
-        }
+        i++;
       }
-      i++;
     }
+
+    function try_again(){
+      if((g_1 == null) || (isNaN(g_1) == true)){
+        document.getElementById("here1").innerHTML = "Please pick a number";
+        x = true;
+        return this.x;
+      }else{
+        x = false;
+        return this.x;
+      }     
+    }
+
+
+  $(document).ready(function(){
+    $(".lucky_num").hide();
+    $("#guess_1, #guess_2, #guess_3").hide();
+
 
 
 
@@ -175,34 +192,44 @@
       ceiling = this.value;
       this.ceiling = Number(ceiling);
       if((isNaN(ceiling) == true) || (ceiling == "")){
-        alert("please pick a NUMBERIC value")
+        alert("please pick a NUMBERIC value");
       }else{
-        $("#picked").text(this.value);
+        $("#picked").delay(1500).text(this.value);
          mr_rando();
         $(this).fadeOut(1500);
-        $("#guess_1, #guess_2, #guess_3").fadeIn(1000);
+        $("#guess_1, #guess_2, #guess_3").fadeIn(1500);
       }
       
     });
 
     $("#guess_1").on("keyup change", function() {
       g_1 = this.value;
-      numberz();
-      $(this).fadeOut(1500);
+      this.g_1 = Number(g_1);
+      if((isNaN(g_1) == true) || (g_1 == "")){
+        alert("please pick a NUMBERIC value");
+        document.getElementById("here1").innerHTML = "Please pick a Numeric value";
+      }else{
+        numberz();
+        if (numberz() != true){
+          $(this).delay(1000).fadeOut(1500);
+        } 
+      }
     });
     $("#guess_2").on("keyup change", function() {
       g_1 = this.value;
+      this.g_1 = Number(g_1);
       numberz();
       $(this).fadeOut(1500);
     });
     $("#guess_3").on("keyup change", function() {
       g_1 = this.value;
+      this.g_1 = Number(g_1);
       numberz();
       $(this).fadeOut(1500);
       $(".lucky_num").fadeIn(3000);
     });
 
-	});
+  });
 </script>
 </body>
 </html>
