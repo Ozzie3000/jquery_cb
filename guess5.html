@@ -7,7 +7,8 @@
 <!--  if necessary
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 -->
-<meta name="viewport" content="width=device-width, initial-scale=0.8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 
 </script>
@@ -117,12 +118,18 @@ body{ width: 700px;}
   <input type="button" class="lucky_num" value="show it" onclick="showIt();">
 	<br />
 
-  <p>Instructions:</p>
-  <ol>
-    <li>You will guess a number between 0 and X; you pick x.</li>
-    <li>You will get 3 guesses</li>
-    <li>If you don't get it in 3 guesses try again.</li>
-  </ol>
+  <fieldset>
+    <legend> Instructions:  &nbsp; || (Hover over me or click me to reveal)</legend>
+ 
+    <ol>
+      <li>You will guess a number between 0 and X; you pick x.</li>
+      <li>You will get 3 guesses</li>
+      <li>If you don't get it in 3 guesses try again.</li>
+    </ol>
+  </fieldset>
+  
+  
+  
   <br />
 
   Pick the end Range: <input type="text" id="domain" tabindex="1" /><button id="dom_1"  tabindex="2">Submit</button> <span id="error_nan"></span><span id="nan" style="margin-left:10px"></span>
@@ -152,7 +159,6 @@ body{ width: 700px;}
     Ozzie3000. <br />Guessing game. You pick the end range, then get 3 guesses.  You will also get hints along the way.  jQuery provides the interactivity.<br /><br /> <a href="index.html">Back to Home page</a>
   </footer>
 
-<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
 
  function picker(){
