@@ -124,7 +124,6 @@ body{ width: 700px;}
 
   <fieldset id="fieldset1" title="Click to hide. Double Click to reveal">
     <legend> Instructions:  &nbsp; || &nbsp; (Click to hide. Double Click to reveal)</legend>
- 
     <ol>
       <li>You will guess a number between 0 and X; you pick x.</li>
       <li>You will get 3 guesses</li>
@@ -237,6 +236,13 @@ body{ width: 700px;}
       "dblclick" : function(){
         hidder.show(1500);
       } //end double click
+    })
+
+    $("#domain").on("keydown", function(event){
+      //alert(event.which);
+      if(event.keyCode == 13){
+        alert("you hit enter");
+      }
     })
 
     $("#dom_1").on("click", function() {
