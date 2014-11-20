@@ -10,7 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.9">
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
-
+  $(function(){
+    //put these up here so they don't flash on game retries
+    $(".lucky_num").hide();
+    $(".guess_1, .guess_2, .guess_3").hide();
+  });  //doc ready
+  
 </script>
 <style type="text/css">
 body{
@@ -19,7 +24,6 @@ body{
   /*background: url("..//pictures/background-wallpapers-60.png"); */
   /* not local */
   /*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
-  /*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg"); */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,7 +38,7 @@ body{
     font-weight: 700;
     src: url(https://themes.googleusercontent.com/static/fonts/oswald/v5/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
   }
-  #submit {
+  .submit {
     background-color: #ccc;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -47,7 +51,6 @@ body{
     border:none;
     padding: 10px;
   }
-
   #special{
     position: absolute;
     margin-top: 40px;
@@ -74,13 +77,15 @@ body{
     -moz-border-radius: 20px;
     border-radius: 20px;
     font-size: 22px;
+    padding: 2px 8px 2px;
   }
-  #submit:hover, .btn:hover {
+  .submit:hover, .btn:hover {
     border: none;
     background:red;
     box-shadow: 0px 0px 1px #777;
     font-size: 32px;  
     font-family: 'Oswald';
+    padding: 2px 12px 2px;
   }
   .guessed, #domain{ 
     -webkit-border-radius: 10px;
@@ -113,13 +118,13 @@ body{ width: 700px;}
 </head>
 <body>
 
-	<input type="button" id="submit" value="Try again" onclick="location.reload();" style="margin-right:5px;"/><h3>Guessing Game</h3>
+	<input type="button" class="submit" value="Try again" onclick="location.reload();" style="margin-right:5px;"/><h3>Guessing Game</h3>
   <section class="lucky_num" id="lucky_num_id">The answer is: </section>
-  <input type="button" class="lucky_num" value="show it" onclick="showIt();">
+  <input type="button" class="lucky_num btn" value="show it" onclick="showIt();">
 	<br />
 
-  <fieldset>
-    <legend> Instructions:  &nbsp; || (Hover over me or click me to reveal)</legend>
+  <fieldset id="fieldset1" title="Click to hide. Double Click to reveal">
+    <legend> Instructions:  &nbsp; || &nbsp; (Click to hide. Double Click to reveal)</legend>
  
     <ol>
       <li>You will guess a number between 0 and X; you pick x.</li>
@@ -128,16 +133,14 @@ body{ width: 700px;}
     </ol>
   </fieldset>
   
-  
-  
   <br />
 
-  Pick the end Range: <input type="text" id="domain" tabindex="1" /><button id="dom_1"  tabindex="2">Submit</button> <span id="error_nan"></span><span id="nan" style="margin-left:10px"></span>
+  Pick the end Range: <input type="text" id="domain" tabindex="1" /><button id="dom_1" class="btn" tabindex="2">Submit</button> <span id="error_nan"></span><span id="nan" style="margin-left:10px"></span>
   
   <br /><br />
-  <input type="text" class="guessed guess_1" placeholder=" Guess 1:"  tabindex="3" /><button class="guess_1" id="guess_1"  tabindex="4" >Submit</button>
-  <input type="text" class="guessed guess_2" placeholder=" Guess 2:"  tabindex="5" /><button class="guess_2" id="guess_2" tabindex="6" >Submit</button>
-  <input type="text" class="guessed guess_3" placeholder=" Guess 3:"  tabindex="7" /><button class="guess_3" id="guess_3" tabindex="8" >Submit</button>
+  <input type="text" class="guessed guess_1" placeholder=" Guess 1:"  tabindex="3" /><button class="guess_1" id="guess_1" class="btn" tabindex="4" >Submit</button>
+  <input type="text" class="guessed guess_2" placeholder=" Guess 2:"  tabindex="5" /><button class="guess_2" id="guess_2" class="btn" tabindex="6" >Submit</button>
+  <input type="text" class="guessed guess_3" placeholder=" Guess 3:"  tabindex="7" /><button class="guess_3" id="guess_3" class="btn" tabindex="8" >Submit</button>
 
   <br /><br />
   <div>
@@ -223,9 +226,19 @@ body{ width: 700px;}
 
 
   $(document).ready(function(){
-    $(".lucky_num").hide();
-    $(".guess_1, .guess_2, .guess_3").hide();
 
+    var hidder = $("ol");
+    $("#fieldset1").on({
+      "click" : function(){
+        hidder.hide(1500);
+      }, //end click func
+     // "mouseover" : function(){
+      //  hidder.hide(1500);
+     // }, //end mouseover
+      "dblclick" : function(){
+        hidder.show(1500);
+      } //end double click
+    })
 
     $("#dom_1").on("click", function() {
       ceiling = $(this).prev().val();
