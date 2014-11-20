@@ -38,19 +38,6 @@ body{
     font-weight: 700;
     src: url(https://themes.googleusercontent.com/static/fonts/oswald/v5/bH7276GfdCjMjApa_dkG6T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
   }
-  .submit {
-    background-color: #ccc;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius:6px;
-    color: #fff;
-    font-family: 'Oswald';
-    font-size: 16px;
-    text-decoration: none;
-    cursor: crosshair;
-    border:none;
-    padding: 10px;
-  }
   #special{
     position: absolute;
     margin-top: 40px;
@@ -72,20 +59,32 @@ body{
   #b1{ margin-left: 20px;}
   #b1, #b2, #b3{float: left; display: inline-block; padding: 20px; }
   #b1, #b2{margin-right: 45px;}
-  .btn{
+  /*{
+    background-color: #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 16px;
+    text-decoration: none;
+    cursor: crosshair;
+    border:none;
+    padding: 10px;
+  }  */
+  .btn, .submit{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
     font-size: 22px;
     padding: 2px 8px 2px;
+    font-family: 'Oswald';
+    cursor: crosshair;
   }
   .submit:hover, .btn:hover {
-    border: none;
+    padding: 2px 12px 2px;
     background:red;
     box-shadow: 0px 0px 1px #777;
-    font-size: 32px;  
-    font-family: 'Oswald';
-    padding: 2px 12px 2px;
   }
   .guessed, #domain{ 
     -webkit-border-radius: 10px;
@@ -118,7 +117,7 @@ body{ width: 700px;}
 </head>
 <body>
 
-	<input type="button" class="submit" value="Try again" onclick="location.reload();" style="margin-right:5px;"/><h3>Guessing Game</h3>
+	<input type="button" class="btn" value="Try again" onclick="location.reload();" style="margin-right:5px;"/><h3>Guessing Game</h3>
   <section class="lucky_num" id="lucky_num_id">The answer is: </section>
   <input type="button" class="lucky_num btn" value="show it" onclick="showIt();">
 	<br />
